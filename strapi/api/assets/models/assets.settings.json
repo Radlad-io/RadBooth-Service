@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assets",
+  "info": {
+    "name": "asset",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "gif",
+        "video"
+      ]
+    },
+    "event": {
+      "model": "event",
+      "via": "assets"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "assets"
+    }
+  }
+}
